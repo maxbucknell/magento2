@@ -17,8 +17,8 @@
         <field xsi:type="ScalarInputField" name="lteq" type="String" description="Less than or equal to"/>
         <field xsi:type="ScalarInputField" name="moreq" type="String" description="More or equal"/>
         <field xsi:type="ScalarInputField" name="neq" type="String" description="Not equal"/>
-        <field xsi:type="ScalarInputField" name="notnull" type="String" description="Not null"/>
-        <field xsi:type="ScalarInputField" name="null" type="String" description="Null"/>
+        <field xsi:type="ScalarInputField" name="notnull" type="Boolean" description="Not null"/>
+        <field xsi:type="ScalarInputField" name="null" type="Boolean" description="Null"/>
         <field xsi:type="ScalarInputField" name="to" type="String" description="The end of a range. Must be used with 'from'."/>
         <field xsi:type="ScalarArrayInputField" name="nin" itemType="String" description="Not in"/>
     </type>
