@@ -521,6 +521,31 @@ QUERY;
     }
 
     /**
+     * @magentoApiDataFixture Magento/Catalog/_files/product_simple.php
+     */
+    public function testFilterProductByNull()
+    {
+        if (!$this->cleanCache()) {
+            $this->fail('Cache could not be cleaned properly.');
+        }
+
+        $query = <<<QUERY
+{
+    products(filter: {special_price: {null: true }})
+    {
+        total_count
+    }
+}
+QUERY;
+
+        $response = $this->graphQlQuery($query);
+
+        $this->assertArrayHasKey('products', $response);
+        $this->assertArrayHasKey('total_count', $response['products']);
+        $this->assertEquals(1, $response['products']['total_count']);
+    }
+
+    /**
      * @param ProductInterface $product
      * @param array $actualResponse
      */
